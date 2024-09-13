@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import Loader from "./Loader";
 
 const SearchScreen = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -66,7 +67,7 @@ const SearchScreen = () => {
         </div>
       </div>
 
-      {loading && <p className="text-lg">Loading...</p>}
+      {loading && <Loader />}
       {error && <p className="text-red-500">{error}</p>}
 
       <div className="flex gap-8 flex-wrap justify-center">
